@@ -1,0 +1,2 @@
+_id,address.building,address.coord[0],address.coord[1],address.street,address.zipcode,borough,cuisine,name,restaurant_id
+64c73a8a8e0261762835cc05,8825,-73.8803827,40.7643124,Astoria Boulevard,11369,Queens,American,Brunos On The Boulevard,40356151
