@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const comment = require("./comment");
 const grade = require("./grade");
 
-const restaurantSchema = mongoose.Schema({
+const restaurantInfoSchema = mongoose.Schema({
   cuisine: {
     type: String,
     required: true,
@@ -22,8 +22,16 @@ const restaurantSchema = mongoose.Schema({
   address: {
     type: Object,
     required: true
+  },
+  comments: {
+    type: [comment.Schema],
+    required: false
+  },
+  grades: {
+    type: [grade.Schema],
+    required: false
   }
 },
-{ collection : 'restaurant' });
+{ collection : 'restaurant_info' });
 
-module.exports = mongoose.model('restaurant', restaurantSchema);
+module.exports = mongoose.model('restaurant_info', restaurantInfoSchema);

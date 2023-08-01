@@ -1,0 +1,26 @@
+{
+    "options": {
+      "viewOn": "restaurant",
+      "pipeline": [
+        {
+          "$lookup": {
+            "foreignField": "restaurant_id",
+            "as": "comments",
+            "from": "comment",
+            "localField": "restaurant_id"
+          }
+        },
+        {
+          "$lookup": {
+            "from": "grade",
+            "localField": "restaurant_id",
+            "foreignField": "restaurant_id",
+            "as": "grades"
+          }
+        }
+      ]
+    },
+    "indexes": [],
+    "collectionName": "restaurant_info",
+    "type": "view"
+  }

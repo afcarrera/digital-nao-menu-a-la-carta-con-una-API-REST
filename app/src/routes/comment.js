@@ -7,7 +7,6 @@ const errorStatusCode = 409;
 // create comment
 router.post("/comments", (req, res) => {
   const comment = commentSchema(req.body);
-  console.log(req.body);
   comment
     .save()
     .then((data) => res.json(data))
