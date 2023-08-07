@@ -1,9 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require('dotenv').config();
-const commentRoute = require("./routes/comment");
-const gradeRoute = require("./routes/grade");
-const restaurantRoute = require("./routes/restaurant");
+const commentRoute = require("./controllers/comment");
+const gradeRoute = require("./controllers/grade");
+const restaurantRoute = require("./controllers/restaurant");
 
 const app = express();
 const port = process.env.PORT || 9000;

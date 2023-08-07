@@ -1,19 +1,9 @@
 const mongoose = require("mongoose");
 
-const commentSchema = mongoose.Schema({
-  date: {
-    type: Date,
-    required: true,
-  },
-  comment: {
-    type: String,
-    required: true
-  },
-  restaurant_id: {
-    type: String,
-    required: true
+module.exports = class Comment{
+  constructor(date, comment) {
+    this.date =  new Date(Date.parse(date));
+    this.comment = comment;
+    this._id = new mongoose.Types.ObjectId();
   }
-},
-{ collection : 'comment' });
-
-module.exports = mongoose.model('comment', commentSchema);
+}

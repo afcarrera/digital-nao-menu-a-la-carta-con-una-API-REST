@@ -1,19 +1,6 @@
-const mongoose = require("mongoose");
-
-const gradeSchema = mongoose.Schema({
-  date: {
-    type: Date,
-    required: true,
-  },
-  score: {
-    type: Number,
-    required: true
-  },
-  restaurant_id: {
-    type: String,
-    required: true
+module.exports = class Grade{
+  constructor(date, score) {
+    this.date = new Date(Date.parse(date));
+    this.score = score;
   }
-},
-{ collection : 'grade' });
-
-module.exports = mongoose.model('grade', gradeSchema);
+}

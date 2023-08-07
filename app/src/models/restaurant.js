@@ -1,6 +1,4 @@
 const mongoose = require("mongoose");
-const comment = require("./comment");
-const grade = require("./grade");
 
 const restaurantSchema = mongoose.Schema({
   cuisine: {
@@ -22,6 +20,14 @@ const restaurantSchema = mongoose.Schema({
   address: {
     type: Object,
     required: true
+  },
+  comments: {
+    type: [Object],
+    required: false
+  },
+  grades: {
+    type: [Object],
+    required: false
   }
 },
 { collection : 'restaurant' });
