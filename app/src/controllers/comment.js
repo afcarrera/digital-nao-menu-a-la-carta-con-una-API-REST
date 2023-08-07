@@ -8,8 +8,8 @@ const errorStatusCode = 409;
 // add comment
 router.post("/restaurants/:id/comments", (req, res) => {
   const { id } = req.params;
-  const { date, comment } = req.body;
-  const commentObj = new Comment(date, comment);
+  const { comment } = req.body;
+  const commentObj = new Comment(comment);
   restaurantSchema
     .updateOne({ _id: id }, { $push: { comments: commentObj} })
     .then((data) => res.json(data))
